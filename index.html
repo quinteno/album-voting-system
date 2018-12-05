@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My record collection</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link type="text/css" rel="stylesheet" href="./css/materialize.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+      <ul id="filter1" class="dropdown-content">
+        <li><a data-rel="all" class="fil-cat">all</a></li>
+        <li><a data-rel="post-hardcore" class="fil-cat">post-hardcore</a></li>
+        <li><a data-rel="emo" class="fil-cat">emo</a></li>
+        <li><a data-rel="rock" class="fil-cat">rock</a></li>
+        <li><a data-rel="metal" class="fil-cat">metal</a></li>
+        <li><a data-rel="psychedelic-rock" class="fil-cat">psychedelic-rock</a></li>
+        <li><a data-rel="prog" class="fil-cat">prog</a></li>
+        <li><a data-rel="electronic" class="fil-cat">electronic</a></li>
+        <li><a data-rel="hip-hop" class="fil-cat">hip-hop</a></li>
+        <li><a data-rel="shoegaze" class="fil-cat">shoegaze</a></li>
+        <li><a data-rel="indie" class="fil-cat">indie</a></li>
+        <li><a data-rel="math-rock" class="fil-cat">math-rock</a></li>
+        <li><a data-rel="hardcore" class="fil-cat">hardcore</a></li>
+        <li><a data-rel="folk" class="fil-cat">folk</a></li>
+        <li><a data-rel="black-metal" class="fil-cat">black-metal</a></li>
+      </ul>
+      <ul id="filter2" class="dropdown-content">
+        <li><a data-rel="all" class="fil-cat">all</a></li>
+        <li><a data-rel="post-hardcore" class="fil-cat">post-hardcore</a></li>
+        <li><a data-rel="emo" class="fil-cat">emo</a></li>
+        <li><a data-rel="rock" class="fil-cat">rock</a></li>
+        <li><a data-rel="metal" class="fil-cat">metal</a></li>
+        <li><a data-rel="psychedelic-rock" class="fil-cat">psychedelic-rock</a></li>
+        <li><a data-rel="prog" class="fil-cat">prog</a></li>
+        <li><a data-rel="electronic" class="fil-cat">electronic</a></li>
+        <li><a data-rel="hip-hop" class="fil-cat">hip-hop</a></li>
+        <li><a data-rel="shoegaze" class="fil-cat">shoegaze</a></li>
+        <li><a data-rel="indie" class="fil-cat">indie</a></li>
+        <li><a data-rel="math-rock" class="fil-cat">math-rock</a></li>
+        <li><a data-rel="hardcore" class="fil-cat">hardcore</a></li>
+        <li><a data-rel="folk" class="fil-cat">folk</a></li>
+        <li><a data-rel="black-metal" class="fil-cat">black-metal</a></li>
+      </ul>
+       <nav>
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo header-title">My Record Collection<i class="material-icons">album</i></a>
+          
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a class="dropdown-button" href="#!" data-activates="filter1">Filter<i class="material-icons right">arrow_drop_down</i></a></li>
+              <li><a href="#addForm" class="add modal-trigger">Add</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="#!" class="dropdown-button" data-activates="filter2"><i class="material-icons">list</i><span>Filter</span></a></li>
+              <li><a href="#addForm" class="add modal-trigger"><i class="material-icons">library_add</i><span>Add</span></a></li>
+            </ul>
+        </div>
+      </nav>
+      <div id="addForm" class="modal">
+        <div class="modal-content">
+          <h4>Add a record to the database</h4>
+
+          <div class="row">
+            <form class="col s12" action="insert.php">
+              <div class="row modal-form-row">
+                <div class="input-field col s12">
+                  <input id="artist" type="text" class="validate">
+                  <label for="artist">Artist</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="album_title" type="text" class="validate">
+                  <label for="album_title">Album</label>
+                </div>
+              </div>
+              <div class="row modal-form-row">
+                <div class="input-field col s12">
+                  <input id="year" type="number" class="validate">
+                  <label for="year">Year</label>
+                </div>
+              </div>       
+              <div class="row modal-form-row">
+                <div class="input-field col s12">
+                  <input id="image_url" type="text" class="validate"></input>
+                  <label for="image_url">Image URL</label>
+                </div>
+              </div>             
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input class=" modal-action modal-close waves-effect waves-green btn-flat" id="submit" type="submit" name="submit">
+        </div>
+      </div>
+      <div class="ajax-loader">
+        <div id="welcome">
+          <img src="./img/recordCollection.png" alt="vinyl record" id="recordCollection">
+          <p>This is my record collection. Click load to see more!</p> 
+        </div>
+
+      </div>
+      <div class="loading">
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a id="get-data" class="waves-effect waves-light btn">Load</a>
+    </div>    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script src="./js/script.js"></script>
+  </body>
+</html>
